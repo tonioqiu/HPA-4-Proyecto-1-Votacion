@@ -58,23 +58,27 @@ public class Votacion extends AppCompatActivity {
         rb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                image.setImageResource(R.drawable.omar_aizpurua);
                 op=1;
-                Toast.makeText(getApplicationContext(),Integer.toString(op), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Se ha Seleccionado Omar Aizpurua", Toast.LENGTH_SHORT).show();
             }
         });
 
         rb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                image.setImageResource(R.drawable.martin_candanedo);
                 op=2;
+                Toast.makeText(getApplicationContext(),"Se ha Seleccionado Martin Candenedo", Toast.LENGTH_SHORT).show();
             }
         });
 
         rb3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                image.setImageResource(R.drawable.vivianvalenzuela);
                 op=3;
+                Toast.makeText(getApplicationContext(),"Se ha Seleccionado Vivian Valenzuela8-941-1215", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -172,4 +176,3 @@ public class Votacion extends AppCompatActivity {
         return false;
     }
 }
-

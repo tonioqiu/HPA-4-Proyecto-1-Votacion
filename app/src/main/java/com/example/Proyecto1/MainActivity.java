@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView test;
     String filename = "";
     String filepath = "";
+    int validez = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         test = findViewById(R.id.textView9);
         filename = "votos.txt";
         filepath = "votos";
+
+
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,30 +48,32 @@ public class MainActivity extends AppCompatActivity {
                 userArray = readFileToArray("users.txt");
                 votoArray = readFileVoteToArray(filename, filepath);
 
+                if(userinput.equals("")){
+                    Toast.makeText(getApplicationContext(),"Ingrese un usuario", Toast.LENGTH_SHORT).show();
+                }
+
                 for (int i = 0; i < userArray.length; i++) {
                     if (userinput.equals(userArray[i]) && votoArray[i].equals("0")){
                         //file read test
                         test.setText("valido");
+                        validez = 1;
                         Intent intent = new Intent(getApplicationContext(), Votacion.class);
                         intent.putExtra("arrayNum", i );
                         startActivity(intent);
-
                     }
                     else if (userinput.equals(userArray[i])){
                         //file read test
                         test.setText("valido");
+                        validez = 1;
                         Intent intent = new Intent(getApplicationContext(), Resultados.class);
                         startActivity(intent);
-
                     }
-                    else if (i==39){
-                        Toast.makeText(getApplicationContext(),"Usuario invalido", Toast.LENGTH_SHORT).show();
-                    }
-
 
 
                 }
-
+                if (validez != 1){
+                Toast.makeText(getApplicationContext(),"Usuario invalido", Toast.LENGTH_SHORT).show();
+               }
             }
         });
     }
@@ -115,3 +120,5 @@ public class MainActivity extends AppCompatActivity {
         return array;
     };
 }
+
+
