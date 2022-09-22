@@ -1,14 +1,14 @@
-package com.example.myapplication;
+package com.example.Proyecto1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Votacion extends AppCompatActivity {
+public class Resultados extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_votacion);
+        setContentView(R.layout.activity_resultados);
     }
 }

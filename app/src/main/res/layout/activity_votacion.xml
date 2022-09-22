@@ -7,19 +7,21 @@
     tools:context=".Votacion">
 
     <RadioGroup
-        android:layout_width="369dp"
-        android:layout_height="205dp"
+        android:id="@+id/radioGroup2"
+        android:layout_width="372dp"
+        android:layout_height="207dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="432dp">
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton1"
             android:layout_width="370dp"
             android:layout_height="63dp"
-            android:layout_gravity="center_horizontal"
             android:text="Ingeniero Omar Aizpurua"
-            android:textAlignment="viewStart" />
+            android:textAlignment="textStart" />
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -37,6 +39,7 @@
     </RadioGroup>
 
     <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -48,18 +51,23 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="256dp"
-        android:layout_height="318dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/omar_aizpurua"
-        tools:layout_editor_absoluteY="84dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/omar_aizpurua" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Votar"
+        android:layout_marginBottom="25dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="658dp" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
