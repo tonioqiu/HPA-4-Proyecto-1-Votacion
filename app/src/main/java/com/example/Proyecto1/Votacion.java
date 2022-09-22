@@ -82,7 +82,7 @@ public class Votacion extends AppCompatActivity {
             public void onClick(View view) {
                 image.setImageResource(R.drawable.vivianvalenzuela);
                 op=3;
-                Toast.makeText(getApplicationContext(),"Se ha Seleccionado Vivian Valenzuela8-941-1215", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Se ha Seleccionado Vivian Valenzuela", Toast.LENGTH_SHORT).show();
 
             }
         });
