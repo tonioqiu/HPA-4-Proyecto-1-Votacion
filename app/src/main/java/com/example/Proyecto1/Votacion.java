@@ -12,23 +12,22 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
 import java.io.File;
-import java.io.FileOutputStream;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
+
 import java.util.ArrayList;
 
 public class Votacion extends AppCompatActivity {
     RadioButton rb1, rb2,rb3;
     ImageView image;
     Button btnVotar;
-    MainActivity util = new MainActivity();
+
     String filename = "";
     String filepath = "";
     int op = 0;

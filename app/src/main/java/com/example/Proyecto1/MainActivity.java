@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     return array;
-    };
+    }
 
     //file reader del SDCard
     public String[] readFileVoteToArray(String filename,String filepath){
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return array;
-    };
+    }
 }
 
 
