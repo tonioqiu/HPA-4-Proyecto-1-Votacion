@@ -10,19 +10,20 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="59dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="64dp"
         android:text="Mgtr. Vivian Valenzuela R."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/barVoto2" />
 
     <TextView
         android:id="@+id/txtVotosVivian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="87dp"
         android:text="10"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
@@ -43,7 +44,7 @@
         android:id="@+id/txtVotosMartin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="16dp"
         android:text="10"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="@+id/txtVotosVivian"
@@ -54,11 +55,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="36dp"
         android:text="Resultados"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,22 +67,22 @@
         android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="122dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.771"
         app:srcCompat="@drawable/omar_aizpurua" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="0dp"
         android:layout_height="122dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="43dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,42 +93,114 @@
         android:id="@+id/imageView6"
         android:layout_width="0dp"
         android:layout_height="130dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegresar"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/vivianvalenzuela" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="71dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="79dp"
         android:text="Ing. Omar O. Aizpurúa P."
+        app:layout_constraintBottom_toTopOf="@+id/txtVotosOmar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ProgressBar
+        android:id="@+id/barVoto1"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="72dp"
+        android:scaleY="5"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/txtVotosOmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="16dp"
         android:text="10"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/txtVotosMartin"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintBottom_toTopOf="@+id/barVoto1"
+        app:layout_constraintEnd_toEndOf="@+id/barVoto1"
+        app:layout_constraintStart_toEndOf="@+id/imageView5" />
 
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="28dp"
         android:text="Regresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barVoto3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ProgressBar
+        android:id="@+id/barVoto2"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:scaleY="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVotosMartin" />
+
+    <ProgressBar
+        android:id="@+id/barVoto3"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="68dp"
+        android:scaleY="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVotosVivian"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtpercent1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        app:layout_constraintStart_toStartOf="@+id/barVoto1"
+        app:layout_constraintTop_toBottomOf="@+id/barVoto1" />
+
+    <TextView
+        android:id="@+id/txtpercent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="3dp"
+        android:text="0%"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/barVoto2" />
+
+    <TextView
+        android:id="@+id/txtpercent3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:text="0%"
+        app:layout_constraintStart_toStartOf="@+id/btnRegresar"
+        app:layout_constraintTop_toBottomOf="@+id/barVoto3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
