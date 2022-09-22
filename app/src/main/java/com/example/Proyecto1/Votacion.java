@@ -51,9 +51,13 @@ public class Votacion extends AppCompatActivity {
         if (!isExternalStorageAviableforRW()){
             btnVotar.setEnabled(false);
         }
+
+        //Creacion un arraglo con los datos existentes y un nuevo arreglo para datos nuevos
         oldVotos = readFileToArray(filename,filepath);
         newVotos = oldVotos;
 
+
+        //Radio button para cambiar la imagen y voto
 
         rb1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +87,7 @@ public class Votacion extends AppCompatActivity {
             }
         });
 
+            //Click del boton Votar
         btnVotar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +95,7 @@ public class Votacion extends AppCompatActivity {
                 int j = Integer.parseInt(i.get("arrayNum").toString());
 
                 switch (op){
+                    //voto 1
                     case 1:
                         newVotos[j] = "1";
                         try {
@@ -101,6 +107,7 @@ public class Votacion extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
+                     //voto 2
                     case 2:
                         newVotos[j] = "2";
                         try {
@@ -110,6 +117,7 @@ public class Votacion extends AppCompatActivity {
                         }
                         startActivity(intent);
                         break;
+                    //voto 3
                     case 3:
                         newVotos[j] = "3";
                         try {
@@ -119,7 +127,7 @@ public class Votacion extends AppCompatActivity {
                         }
                         startActivity(intent);
                         break;
-
+                    //Si no ha seleccionado ningun candidato
                     default:
                         Toast.makeText(getApplicationContext(),"Seleccione un candidato por favor.", Toast.LENGTH_SHORT).show();
 
@@ -130,6 +138,7 @@ public class Votacion extends AppCompatActivity {
 
     }
 
+    //File Reader del SDCard
     public String[] readFileToArray(String filename,String filepath){
         String array[] = new String[40];
         FileReader fr = null;
@@ -151,6 +160,9 @@ public class Votacion extends AppCompatActivity {
 
         return array;
     };
+
+
+    //File Writer del SDCard
     public void writeArrayToFile(String arrayName[], String filename, String filepath) throws IOException {
         if (arrayName.length != 0){
             File file = new File(getExternalFilesDir(filepath),filename);
@@ -167,7 +179,7 @@ public class Votacion extends AppCompatActivity {
         }
 
     };
-
+    //Verificador de permiso para guardar en la aplicacion
     private boolean isExternalStorageAviableforRW(){
         String extStorageState = Environment.getExternalStorageState();
         if(extStorageState.equals(Environment.MEDIA_MOUNTED)){

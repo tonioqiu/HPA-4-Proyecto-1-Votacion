@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+//Antes de empezar la aplicacion, se debe copiar el archivo votos.txt al directorio /sdcard/Android/data/com.example.proyecto1/files/votos
 
 public class MainActivity extends AppCompatActivity {
     EditText idEstudiante;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         filepath = "votos";
 
 
-
+        //Click del boton Login
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,26 +45,28 @@ public class MainActivity extends AppCompatActivity {
                 String[] votoArray = new String[40];
 
 
-                //File reader
+                //Leer el archivo de user.txt en assets y leer el archivo de votos del SDCard
                 userArray = readFileToArray("users.txt");
                 votoArray = readFileVoteToArray(filename, filepath);
-
+                //Validar que el camnpo de texto tenga algo escrito
                 if(userinput.equals("")){
                     Toast.makeText(getApplicationContext(),"Ingrese un usuario", Toast.LENGTH_SHORT).show();
                 }
-
+                //Busqueda de usuario ingresado en el arreglo leido de usuarios
                 for (int i = 0; i < userArray.length; i++) {
+                    //Si el usuario es valido y no ha votado
                     if (userinput.equals(userArray[i]) && votoArray[i].equals("0")){
                         //file read test
-                        test.setText("valido");
+                        //test.setText("valido");
                         validez = 1;
                         Intent intent = new Intent(getApplicationContext(), Votacion.class);
                         intent.putExtra("arrayNum", i );
                         startActivity(intent);
                     }
+                    //si el usuario es valido y ya voto
                     else if (userinput.equals(userArray[i])){
                         //file read test
-                        test.setText("valido");
+                        //test.setText("valido");
                         validez = 1;
                         Intent intent = new Intent(getApplicationContext(), Resultados.class);
                         startActivity(intent);
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
+                //Si el usuario es invalido
                 if (validez != 1){
                 Toast.makeText(getApplicationContext(),"Usuario invalido", Toast.LENGTH_SHORT).show();
                }
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //File Reader
+    //File Reader del folder de assets
     public String[] readFileToArray(String filename){
         String array[] = new String[40];
         try {
@@ -98,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     return array;
     };
 
+    //file reader del SDCard
     public String[] readFileVoteToArray(String filename,String filepath){
         String array[] = new String[40];
         FileReader fr = null;
