@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     EditText idEstudiante;
     Button Login;
     TextView test;
-
+    String filename = "";
+    String filepath = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         idEstudiante = findViewById(R.id.txtIdentificacion);
         Login = findViewById(R.id.btnLogin);
         test = findViewById(R.id.textView9);
+        filename = "votos.txt";
+        filepath = "votos";
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 String[] userArray = new String[40];
                 String[] votoArray = new String[40];
 
+
                 //File reader
                 userArray = readFileToArray("users.txt");
-                votoArray = readFileToArray("votos.txt");
+                votoArray = readFileVoteToArray(filename, filepath);
 
                 for (int i = 0; i < userArray.length; i++) {
                     if (userinput.equals(userArray[i]) && votoArray[i].equals("0")){
@@ -87,5 +93,25 @@ public class MainActivity extends AppCompatActivity {
     return array;
     };
 
+    public String[] readFileVoteToArray(String filename,String filepath){
+        String array[] = new String[40];
+        FileReader fr = null;
+        File file = new File(getExternalFilesDir(filepath),filename);
+        try {
+            fr = new FileReader(file);
+            BufferedReader bReader = new BufferedReader(fr);
+            ArrayList<String> userlist = new ArrayList<String>();
+            String line = bReader.readLine();
+            while (line != null) {
+                userlist.add(line);
+                line = bReader.readLine();
+            }
+            bReader.close();
+            array = userlist.toArray(new String[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        return array;
+    };
 }

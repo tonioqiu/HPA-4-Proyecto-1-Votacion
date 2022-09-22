@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -18,6 +20,8 @@ public class Resultados extends AppCompatActivity {
     TextView txtVotosOmar, txtVotosVivian, txtVotosMartin;
     Button buttonR;
     int voto1, voto2, voto3;
+    String filename = "";
+    String filepath = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,8 @@ public class Resultados extends AppCompatActivity {
         setContentView(R.layout.activity_resultados);
         String[] votoArray = new String[40];
 
+        filename = "votos.txt";
+        filepath = "votos";
         //asignar objetos textview
         txtVotosOmar = findViewById(R.id.txtVotosOmar);
         txtVotosMartin = findViewById(R.id.txtVotosMartin);
@@ -34,7 +40,7 @@ public class Resultados extends AppCompatActivity {
         buttonR = findViewById(R.id.btnRegresar);
 
         //File reader
-        votoArray = readFileToArray("votos.txt");
+        votoArray = readFileToArray(filename,filepath);
 
         //Conteo de votos
         for (int i = 0; i < votoArray.length; i++ ){
@@ -42,14 +48,14 @@ public class Resultados extends AppCompatActivity {
                 voto1++;
             else if (Integer.parseInt(votoArray[i]) == 2)
                 voto2++;
-            else
+            else if (Integer.parseInt(votoArray[i]) == 3)
                 voto3++;
         }
 
         //Camibio del texto en el textView
         String a=Integer.toString(voto1);
-        String b=Integer.toString(voto1);
-        String c=Integer.toString(voto1);
+        String b=Integer.toString(voto2);
+        String c=Integer.toString(voto3);
         txtVotosOmar.setText(a);
         txtVotosMartin.setText(b);
         txtVotosVivian.setText(c);
@@ -66,10 +72,13 @@ public class Resultados extends AppCompatActivity {
     }
 
     //File Reader
-    public String[] readFileToArray(String filename){
+    public String[] readFileToArray(String filename,String filepath){
         String array[] = new String[40];
+        FileReader fr = null;
+        File file = new File(getExternalFilesDir(filepath),filename);
         try {
-            BufferedReader bReader = new BufferedReader(new InputStreamReader(getAssets().open(filename)));
+            fr = new FileReader(file);
+            BufferedReader bReader = new BufferedReader(fr);
             ArrayList<String> userlist = new ArrayList<String>();
             String line = bReader.readLine();
             while (line != null) {
