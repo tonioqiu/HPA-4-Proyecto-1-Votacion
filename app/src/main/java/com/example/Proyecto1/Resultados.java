@@ -47,9 +47,12 @@ public class Resultados extends AppCompatActivity {
         }
 
         //Camibio del texto en el textView
-        txtVotosOmar.setText(voto1);
-        txtVotosMartin.setText(voto2);
-        txtVotosVivian.setText(voto3);
+        String a=Integer.toString(voto1);
+        String b=Integer.toString(voto1);
+        String c=Integer.toString(voto1);
+        txtVotosOmar.setText(a);
+        txtVotosMartin.setText(b);
+        txtVotosVivian.setText(c);
 
         //Boton de regreso a la pantalla principal
         buttonR.setOnClickListener(new View.OnClickListener() {

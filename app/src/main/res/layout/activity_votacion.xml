@@ -11,10 +11,10 @@
         android:layout_width="372dp"
         android:layout_height="207dp"
         android:layout_marginBottom="21dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnVotar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4">
+        app:layout_constraintTop_toBottomOf="@+id/imageVoto">
 
         <RadioButton
             android:id="@+id/radioButton1"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageVoto"
         android:layout_width="256dp"
         android:layout_height="0dp"
         android:layout_marginTop="84dp"
@@ -61,11 +61,11 @@
         app:srcCompat="@drawable/omar_aizpurua" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnVotar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:text="Button"
+        android:text="Votar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
