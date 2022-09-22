@@ -10,7 +10,7 @@ Se definio los usuarios preestablecidos en el archivo users.txt bajo @assets
 - Antes de empezar la aplicacion, se debe copiar el archivo votos.txt al directorio /sdcard/Android/data/com.example.proyecto1/files/votos
 
 ```
-Funcion por implemente fuera del requisito del proyecto
+Funcion por implementar fuera del requisito del proyecto
   
   Automaticamente copiar el archivo votos.txt al al directorio /sdcard/Android/data/com.example.proyecto1/files/votos
 
