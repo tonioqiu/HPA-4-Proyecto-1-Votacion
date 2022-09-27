@@ -19,23 +19,29 @@
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="370dp"
-            android:layout_height="63dp"
+            android:layout_height="wrap_content"
             android:text="Ingeniero Omar Aizpurua"
             android:textAlignment="textStart" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_height="wrap_content"
             android:text="Ing. Martin E. Candanedo" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:text="Mgtr. Vivian Valenzuela R."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nulo" />
     </RadioGroup>
 
     <TextView

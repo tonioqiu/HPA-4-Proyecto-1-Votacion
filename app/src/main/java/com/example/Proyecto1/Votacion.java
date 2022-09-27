@@ -24,7 +24,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Votacion extends AppCompatActivity {
-    RadioButton rb1, rb2,rb3;
+    RadioButton rb1, rb2,rb3,rb4;
     ImageView image;
     Button btnVotar;
 
@@ -41,6 +41,7 @@ public class Votacion extends AppCompatActivity {
         rb1 = findViewById(R.id.radioButton1);
         rb2 = findViewById(R.id.radioButton2);
         rb3 = findViewById(R.id.radioButton3);
+        rb4 = findViewById(R.id.radioButton4);
         btnVotar = findViewById(R.id.btnVotar);
         image = findViewById(R.id.imageVoto);
         Intent intent = getIntent();
@@ -61,6 +62,7 @@ public class Votacion extends AppCompatActivity {
         rb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                image.setVisibility(View.VISIBLE);
                 image.setImageResource(R.drawable.omar_aizpurua);
                 op=1;
                 Toast.makeText(getApplicationContext(),"Se ha Seleccionado Omar Aizpurua", Toast.LENGTH_SHORT).show();
@@ -70,6 +72,7 @@ public class Votacion extends AppCompatActivity {
         rb2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                image.setVisibility(View.VISIBLE);
                 image.setImageResource(R.drawable.martin_candanedo);
                 op=2;
                 Toast.makeText(getApplicationContext(),"Se ha Seleccionado Martin Candenedo", Toast.LENGTH_SHORT).show();
@@ -79,10 +82,20 @@ public class Votacion extends AppCompatActivity {
         rb3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                image.setVisibility(View.VISIBLE);
                 image.setImageResource(R.drawable.vivianvalenzuela);
                 op=3;
                 Toast.makeText(getApplicationContext(),"Se ha Seleccionado Vivian Valenzuela", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        rb4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                image.setVisibility(View.INVISIBLE);
+                op = 4;
+                Toast.makeText(getApplicationContext(),"Se ha Seleccionado Voto Nulo", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,6 +132,15 @@ public class Votacion extends AppCompatActivity {
                     //voto 3
                     case 3:
                         newVotos[j] = "3";
+                        try {
+                            writeArrayToFile(newVotos, filename, filepath);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        newVotos[j] = "4";
                         try {
                             writeArrayToFile(newVotos, filename, filepath);
                         } catch (IOException e) {
